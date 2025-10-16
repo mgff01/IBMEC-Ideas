@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Especifique aqui a sua pasta personalizada
-          path: './dist' 
+          path: './Ideas' 
 
       - name: Deploy to GitHub Pages
         id: deployment
