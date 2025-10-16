@@ -27,8 +27,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3 # Atualizado para v3
         with:
-          # Especifique aqui a sua pasta personalizada (ex: ./dist, ./build, etc.)
-          path: './dist' 
+
+          path: './Ideas' 
 
       - name: Deploy to GitHub Pages
         id: deployment
