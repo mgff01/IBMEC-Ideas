@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3 # Atualizado para v3
         with:
 
-          path: './Ideas' 
+          path: './Ideas'
 
       - name: Deploy to GitHub Pages
         id: deployment
