@@ -11,7 +11,7 @@
 
 ### Documentação do Projeto
 
-- **[Documento de Visão](./Documento%20de%20Visão.md)**
+
 - **[Detalhamento de Scrum Meetings](./Detalhamento%20de%20Scrum%20Meetings.md)**
 - **[Registro de Brainstorm](./Registro%20de%20Brainstorm.md)**
 - **[5w2h](./5W2H.jpeg)**
