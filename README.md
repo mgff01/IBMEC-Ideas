@@ -4,7 +4,7 @@
 - Francisco Fagner de Paiva 
 - João Vitor Pilão
 - Lucas Alcântara
-- Mauricio Gomes
+- Mauricio Gomes 
 - Roger Pires
 
 ---
