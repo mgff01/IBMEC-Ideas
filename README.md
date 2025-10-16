@@ -1,7 +1,7 @@
 # [IBMEC-Ideas](http://mgff01.github.io/IBMEC-Ideas/)
 ### Grupo
 - Christian Werneck
-- Francisco Fagner de Paiva
+- Francisco Fagner de Paiva 
 - João Vitor Pilão
 - Lucas Alcântara
 - Mauricio Gomes
