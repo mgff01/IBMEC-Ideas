@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/upload-artifact@v4
 
       # Se o seu projeto precisa de um passo de build (ex: npm install && npm run build)
       # Adicione esses passos aqui. Exemplo:
