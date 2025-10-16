@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Executa em pushes para o branch principal
+  push:
+    branches:
+      - main
+  # Permite que você execute este workflow manualmente na aba Actions
+  workflow_dispatch:
+
+# Permissões para o GITHUB_TOKEN para permitir o deploy no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # Atualizado para v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5 # Atualizado para v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3 # Atualizado para v3
+        with:
+
+          path: './Ideas' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # Atualizado para v4
