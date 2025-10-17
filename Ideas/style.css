@@ -55,6 +55,12 @@ body {
   justify-content: center;
   align-items: center;
   padding: var(--spacing-lg);
+
+  /* Fundo degradê azul*/
+  background: linear-gradient(135deg, #007bff, #001f3f);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1, h2, h3 {
@@ -200,9 +206,24 @@ body.page-index footer div a {
 /* -------------------
    PÁGINAS: LOGIN E CADASTRO (login.html, log on.html, login hubs.html)
    ------------------- */
+
+/* === FUNDO ESPECÍFICO PARA LOGIN E CADASTRO=== */
 body.page-auth {
-  background: var(--color-primary) url('data:image/svg+xml,...'); /* Adicionar BG abstrato aqui */
-  background-size: cover;
+  background: url('https://i.ibb.co/BHWF0qSC/Login-Page.png') no-repeat center center fixed;
+  background-size: 120%;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-text-light);
+  place-items: center;
+}
+
+/* === FUNDO ESPECÍFICO PARA LOGIN HUBS === */
+body.page-loginhubs {
+  background: url('https://i.ibb.co/xK1knfrB/Login-Page-Hubs.png') no-repeat center center fixed;
+  background-size: 120%;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-text-light);
   display: grid;
   place-items: center;
   height: 100vh;
@@ -288,11 +309,6 @@ body.page-auth {
 .page-auth footer {
   margin-top: var(--spacing-lg);
   text-align: center;
-}
-
-/* Específico para Login Hubs */
-body.page-loginhubs {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
 body.page-loginhubs main::before { /* Troca a logo */

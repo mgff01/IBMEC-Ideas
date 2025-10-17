@@ -6,33 +6,30 @@
     <title>Ibmec Ideas - Log in </title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-auth">
 
     <header>
         <h1>Ibmec Ideas</h1>
-        <div>
-            I
-        </div>
     </header>
 
     <main>
+        <div>
+            <img src="ideaslogo.png" alt="Logo Ibmec Ideas" style="width:180px; height:180px;">
+        </div>
         <h2>Login</h2>
 
         <form action="/login" method="post">
-            
-            <fieldset>
-                <legend>Acesso</legend>
+            <legend>Acesso</legend>
 
-                <div>
-                    <label for="usuario">CNPJ, E-mail ou Nome da empresa</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Insira CNPJ, E-mail ou Nome" required>
-                </div>
+            <div>
+                <label for="usuario">CNPJ, E-mail ou Nome da empresa</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Insira CNPJ, E-mail ou Nome" required>
+            </div>
 
-                <div>
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
-                </div>
-            </fieldset>
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
+            </div>
 
             <p>
                 <a href="#">Esqueci minha senha</a>
