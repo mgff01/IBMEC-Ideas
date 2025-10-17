@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ibmec Ideas - Log in</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Aplica a transição à imagem dentro do link no 'main' */
+    main div a img {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
 </head>
 <body class="page-auth">
 
@@ -47,11 +53,29 @@
 </footer>
 
 <script>
+  // --- Script para redirecionar o formulário (já existente) ---
   document.getElementById('loginForm').addEventListener('submit', function (e) {
     e.preventDefault(); // evita envio real
     // Aqui você poderia validar os dados, se quiser
     window.location.href = 'home.html'; // redireciona para home
   });
+
+  // --- INÍCIO DO JAVASCRIPT ADICIONADO PARA ANIMAÇÃO ---
+  // 1. Seleciona a imagem do logo
+  const logo = document.querySelector('main div a img');
+
+  // 2. Adiciona um "ouvinte" para quando o mouse passar por cima
+  logo.addEventListener('mouseover', function() {
+    // Aumenta o tamanho da imagem em 5%
+    this.style.transform = 'scale(1.05)';
+  });
+
+  // 3. Adiciona um "ouvinte" para quando o mouse sair de cima
+  logo.addEventListener('mouseout', function() {
+    // Retorna a imagem ao tamanho original
+    this.style.transform = 'scale(1)';
+  });
+  // --- FIM DO JAVASCRIPT ADICIONADO ---
 </script>
 
 </body>
