@@ -55,6 +55,12 @@ body {
   justify-content: center;
   align-items: center;
   padding: var(--spacing-lg);
+
+  /* Fundo degradê azul*/
+  background: linear-gradient(135deg, #007bff, #001f3f);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1, h2, h3 {
@@ -127,6 +133,7 @@ form button:last-of-type {
 body.page-index {
   background-color: var(--color-primary);
   justify-content: space-between;
+  position: fixed;
 }
 
 body.page-index header {
@@ -200,9 +207,24 @@ body.page-index footer div a {
 /* -------------------
    PÁGINAS: LOGIN E CADASTRO (login.html, log on.html, login hubs.html)
    ------------------- */
+
+/* === FUNDO ESPECÍFICO PARA LOGIN E CADASTRO=== */
 body.page-auth {
-  background: var(--color-primary) url('data:image/svg+xml,...'); /* Adicionar BG abstrato aqui */
-  background-size: cover;
+  background: url('https://i.ibb.co/BHWF0qSC/Login-Page.png') no-repeat center center fixed;
+  background-size: 120%;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-text-light);
+  place-items: center;
+}
+
+/* === FUNDO ESPECÍFICO PARA LOGIN HUBS === */
+body.page-loginhubs {
+  background: url('https://i.ibb.co/xK1knfrB/Login-Page-Hubs.png') no-repeat center center fixed;
+  background-size: 120%;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-text-light);
   display: grid;
   place-items: center;
   height: 100vh;
@@ -219,15 +241,6 @@ body.page-auth {
   max-width: 900px;
 }
 
-.page-auth main::before { /* Pseudo-elemento para o Logo 'I' */
-  content: 'I';
-  font-size: 15rem;
-  font-weight: 900;
-  color: var(--color-text-light);
-  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  position: relative;
-  display: block;
-}
 .page-auth main::before::before { /* Pseudo-elemento para o triângulo */
     content: '';
     position: absolute;
@@ -288,11 +301,6 @@ body.page-auth {
 .page-auth footer {
   margin-top: var(--spacing-lg);
   text-align: center;
-}
-
-/* Específico para Login Hubs */
-body.page-loginhubs {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
 body.page-loginhubs main::before { /* Troca a logo */

@@ -6,23 +6,21 @@
     <title>Ibmec Ideas - Cadastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-auth">
 
     <header>
         <h1>Ibmec Ideas</h1>
-        <div>
-            I
-        </div>
     </header>
 
     <main>
-        <h2>Cadastre-se</h2>
+        <div>
+            <img src="./assets/Logo.svg" alt="Logo Ibmec Ideas" href="index.html" style="width:180px; height:180px;">
+        </div>
+     
 
         <form action="/cadastro" method="post">
-            
-            <fieldset>
+              <h2>Cadastre-se</h2>
                 <legend>Informações da Empresa</legend>
-
                 <div>
                     <label for="nomeEmpresa">Nome da Empresa</label>
                     <input type="text" id="nomeEmpresa" name="nomeEmpresa" placeholder="Insira o nome da empresa" required>
@@ -64,9 +62,7 @@
                         <option value="outra">Outra</option>
                     </select>
                 </div>
-            </fieldset>
 
-            <fieldset>
                 <legend>Credenciais</legend>
 
                 <div>
@@ -78,11 +74,9 @@
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
                 </div>
-            </fieldset>
 
             <p>
-                <input type="checkbox" id="termos" name="termos" required>
-                <label for="termos">Li e aceito os <a href="#">Termos de Uso</a></label>
+                <label for="termos">Li e aceito os <a href="#">Termos de Uso</a></label> <input type="checkbox" id="termos" name="termos" required>
             </p>
 
             <button href="login.html" submit>Criar conta</button>
