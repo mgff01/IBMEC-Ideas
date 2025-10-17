@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ibmec Ideas</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #caixa-de-feedbacks > div {
+            /* Adiciona uma transição suave de 0.3s para as propriedades 'transform' e 'box-shadow'.
+               O seletor '>' garante que o estilo se aplique apenas aos 'divs' que são filhos diretos da section.
+            */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    </style>
 </head>
 <body>
 
@@ -73,7 +81,30 @@
     </main>
 
     <footer>
-        </footer>
+    </footer>
 
-</body>
+    <script>
+        // 1. Seleciona todos os 'divs' que são filhos diretos da section 'caixa-de-feedbacks'
+        const feedbackCards = document.querySelectorAll('#caixa-de-feedbacks > div');
+
+        // 2. Para cada cartão de feedback, adiciona os eventos
+        feedbackCards.forEach(card => {
+            // Evento para quando o mouse entra na área do cartão
+            card.addEventListener('mouseover', function() {
+                // Move o cartão 5 pixels para cima
+                this.style.transform = 'translateY(-5px)';
+                // Adiciona uma sombra sutil para dar profundidade
+                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                this.style.cursor = 'pointer';
+            });
+
+            // Evento para quando o mouse sai da área do cartão
+            card.addEventListener('mouseout', function() {
+                // Remove os estilos, fazendo o cartão voltar à sua posição e aparência originais
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+    </body>
 </html>
