@@ -1,0 +1,59 @@
+import { Link } from 'react-router-dom';
+import { useBodyClass } from '../hooks/useBodyClass.js';
+
+const feedbacks = [
+  'Experiência Incrível e Intuitiva!',
+  'Interface amigável e suporte rápido.',
+  'Facilitou a colaboração entre equipes.',
+];
+
+function Feedback() {
+  useBodyClass('');
+
+  return (
+    <>
+      <header className="feedback-header">
+        <div className="feedback-header-content">
+          <div>
+            <Link to="/">
+              <img src="/assets/Logo.svg" alt="Logo Ibmec Ideas" style={{ width: 120, height: 120 }} />
+            </Link>
+          </div>
+          <nav className="feedback-nav">
+            <Link to="/sobre" className="feedback-nav-btn">
+              Sobre nós
+            </Link>
+            <Link to="/" className="feedback-nav-btn">
+              Fale Conosco
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <main className="feedback-main-bg">
+        <section className="feedback-card">
+          <div className="feedback-list-block">
+            <div className="feedback-list">
+              {feedbacks.map((text, index) => (
+                <div className="feedback-item" key={index}>
+                  <div className="feedback-avatar">
+                    <img src="/assets/professional.png" alt="Avatar" />
+                  </div>
+                  <div className="feedback-content">
+                    <span className="feedback-stars">★★★★★</span>
+                    <span className="feedback-text">{text}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="feedback-card-icon">
+            <img src="/assets/Logo.svg" alt="Logo de Fundo" />
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
+
+export default Feedback;
