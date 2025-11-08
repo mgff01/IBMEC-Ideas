@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import hubsLogo from '../assets/Logohubs.svg';
 
 function LoginHubs() {
   useBodyClass('page-loginhubs');
@@ -20,7 +21,7 @@ function LoginHubs() {
         <div>
           <Link to="/">
             <img
-              src="/assets/Logohubs.svg"
+              src={hubsLogo}
               alt="Logo Ibmec Hubs"
               className="brand-logo brand-logo--large"
             />

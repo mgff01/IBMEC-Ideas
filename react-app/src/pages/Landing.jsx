@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import titleImage from '../assets/Title.svg';
+import instagramIcon from '../assets/instagram.svg';
+import xIcon from '../assets/x.svg';
+import linkedinIcon from '../assets/linkedin.svg';
 
 function Landing() {
   useBodyClass('page-index');
@@ -9,7 +13,7 @@ function Landing() {
       <main className="hero-wrap">
         <section className="hero-card">
           <img
-            src="/assets/Title.svg"
+            src={titleImage}
             alt="Ibmec Ideas"
             className="hero-logo brand-logo brand-logo--hero"
           />
@@ -49,13 +53,13 @@ function Landing() {
 
         <div className="socials">
           <a href="https://instagram.com" className="social" aria-label="Instagram">
-            <img src="/assets/instagram.svg" alt="Instagram" />
+            <img src={instagramIcon} alt="Instagram" />
           </a>
           <a href="https://x.com" className="social" aria-label="X">
-            <img src="/assets/x.svg" alt="X" />
+            <img src={xIcon} alt="X" />
           </a>
           <a href="https://linkedin.com" className="social" aria-label="LinkedIn">
-            <img src="/assets/linkedin.svg" alt="LinkedIn" />
+            <img src={linkedinIcon} alt="LinkedIn" />
           </a>
         </div>
       </footer>

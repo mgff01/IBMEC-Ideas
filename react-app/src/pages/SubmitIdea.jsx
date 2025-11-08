@@ -1,4 +1,5 @@
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import logo from '../assets/Logo.svg';
 
 function SubmitIdea() {
   useBodyClass('');
@@ -12,7 +13,7 @@ function SubmitIdea() {
     <>
       <header>
         <div>
-          <img src="/assets/Logo.svg" alt="Logo Ibmec Ideas" className="brand-logo" />
+          <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo" />
         </div>
         <h1>Preencha o formulário abaixo</h1>
         <p>

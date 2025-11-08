@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import logoBackground from '../assets/Logo_BG.svg';
+import professionalImage from '../assets/professional.png';
 
 const projects = Array.from({ length: 6 }, (_, index) => ({
   id: index + 1,
   title: `Projeto ${index + 1}`,
-  image: '/assets/professional.png',
+  image: professionalImage,
 }));
 
 function Projects() {
@@ -15,7 +17,7 @@ function Projects() {
       <aside className="sidebar">
         <div>
           <Link to="/">
-            <img src="/assets/Logo_BG.svg" alt="Logo Ibmec Ideas" className="brand-logo brand-logo--hero" />
+            <img src={logoBackground} alt="Logo Ibmec Ideas" className="brand-logo brand-logo--hero" />
           </Link>
         </div>
 

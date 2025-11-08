@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import logo from '../assets/Logo.svg';
 
 function Login() {
   useBodyClass('page-auth');
@@ -19,7 +20,7 @@ function Login() {
       <main>
         <div>
           <Link to="/">
-            <img src="/assets/Logo.svg" alt="Logo Ibmec Ideas" className="brand-logo" />
+            <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo" />
           </Link>
         </div>
 

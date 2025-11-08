@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import logo from '../assets/Logo.svg';
+import professionalImage from '../assets/professional.png';
 
 function About() {
   useBodyClass('page-about');
@@ -10,7 +12,7 @@ function About() {
         <div className="feedback-header-content">
           <div>
             <Link to="/">
-              <img src="/assets/Logo.svg" alt="Logo Ibmec Ideas" style={{ width: 120, height: 120 }} />
+              <img src={logo} alt="Logo Ibmec Ideas" style={{ width: 120, height: 120 }} />
             </Link>
           </div>
           <nav className="feedback-nav">
@@ -48,7 +50,7 @@ function About() {
           </div>
           <div className="about-card-image">
             <img
-              src="/assets/professional.png"
+              src={professionalImage}
               alt="Profissional utilizando a plataforma"
               className="about-img-rounded"
             />

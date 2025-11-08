@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
+import logo from '../assets/Logo.svg';
+import professionalImage from '../assets/professional.png';
 
 const feedbacks = [
   'Experiência Incrível e Intuitiva!',
@@ -16,7 +18,7 @@ function Feedback() {
         <div className="feedback-header-content">
           <div>
             <Link to="/">
-              <img src="/assets/Logo.svg" alt="Logo Ibmec Ideas" style={{ width: 120, height: 120 }} />
+              <img src={logo} alt="Logo Ibmec Ideas" style={{ width: 120, height: 120 }} />
             </Link>
           </div>
           <nav className="feedback-nav">
@@ -37,7 +39,7 @@ function Feedback() {
               {feedbacks.map((text, index) => (
                 <div className="feedback-item" key={index}>
                   <div className="feedback-avatar">
-                    <img src="/assets/professional.png" alt="Avatar" />
+                    <img src={professionalImage} alt="Avatar" />
                   </div>
                   <div className="feedback-content">
                     <span className="feedback-stars">★★★★★</span>
@@ -48,7 +50,7 @@ function Feedback() {
             </div>
           </div>
           <div className="feedback-card-icon">
-            <img src="/assets/Logo.svg" alt="Logo de Fundo" />
+            <img src={logo} alt="Logo de Fundo" />
           </div>
         </section>
       </main>
