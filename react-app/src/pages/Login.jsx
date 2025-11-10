@@ -17,14 +17,14 @@ function Login() {
         <h1>Ibmec Ideas</h1>
       </header>
 
-      <main>
-        <div>
+      <main className="auth-layout">
+        <section className="auth-intro">
           <Link to="/">
-            <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo" />
+            <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo brand-logo--auth" />
           </Link>
-        </div>
+        </section>
 
-        <form onSubmit={handleSubmit}>
+        <form className="auth-form" onSubmit={handleSubmit}>
           <h2>Login</h2>
           <legend>Acesso</legend>
 

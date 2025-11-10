@@ -39,8 +39,20 @@ html {
   font-size: var(--font-size-base);
   scroll-behavior: smooth;
 }
+body.page-auth  {
+  margin: 0;
+  background-image: url('./assets/Login-Page.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-
+body.page-loginhubs {
+  background-image: url('./assets/Login-Hubs.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 h1, h2, h3 {
   line-height: 1.2;
@@ -62,6 +74,25 @@ fieldset legend {
   height: 1px;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
+}
+
+.brand-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.brand-logo--hero {
+  max-width: 360px;
+}
+
+.brand-logo--large {
+  max-width: 420px;
+}
+
+.brand-logo--auth {
+  max-width: clamp(180px, 40vw, 260px);
+  margin-inline: auto;
 }
 
 /* --------------------------------------------------------------------------
@@ -190,7 +221,6 @@ background: linear-gradient(135deg, #007bff, #001f3f);
 
 .hero-wrap {
   width: 100%;
-  max-width: 900px;
   display: flex;
   justify-content: center;
 }
@@ -199,7 +229,7 @@ background: linear-gradient(135deg, #007bff, #001f3f);
   width: 100%;
   background: linear-gradient(180deg, #0671d9 0%, #0072f5 60%);
   border-radius: 28px;
-  padding: 56px 48px;
+  padding: 56px 89px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column; 
@@ -306,20 +336,15 @@ background: linear-gradient(135deg, #007bff, #001f3f);
 body:is(.page-auth, .page-loginhubs) {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 130%;
+  background-size: cover;
+  /* keep background fixed to viewport so images always fill screen */
+  background-attachment: fixed;
   min-height: 100vh;
   color: var(--color-text-light);
   display: grid;
   place-items: center;
-  padding: var(--spacing-xl);
-}
-
-body.page-auth {
-  background-image: url(./assets/Login-Page.png);
-}
-
-body.page-loginhubs {
-  background-image: url(./assets/Login-Page-Hubs.png);
+  padding: clamp(var(--spacing-lg), 6vw, var(--spacing-xl));
+  overflow-y: auto;
 }
 
 :is(.page-auth, .page-loginhubs) header {
@@ -327,21 +352,36 @@ body.page-loginhubs {
 }
 
 :is(.page-auth, .page-loginhubs) main {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(320px, 480px);
   align-items: center;
   justify-content: center;
   gap: var(--spacing-xl);
-  width: min(900px, 100%);
+  width: min(1050px, 100%);
 }
 
 :is(.page-auth, .page-loginhubs) form {
-  width: clamp(280px, 90vw, 450px);
+  width: min(100%, 480px);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius-md);
   background: var(--color-glass-bg);
   border: 1px solid var(--color-glass-border);
   backdrop-filter: blur(10px);
   box-shadow: var(--box-shadow);
+}
+
+:is(.page-auth, .page-loginhubs) main .auth-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  color: var(--color-text-light);
+  max-width: 320px;
+}
+
+.auth-tagline {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 :is(.page-auth, .page-loginhubs) form h2 {
@@ -808,9 +848,25 @@ body.page-projects {
 
 @media (max-width: 768px) {
   :is(.page-auth, .page-loginhubs) main {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  :is(.page-auth, .page-loginhubs) form {
+    width: 100%;
+    padding: var(--spacing-lg);
+  }
+
+  :is(.page-auth, .page-loginhubs) main .auth-intro {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .auth-tagline {
+    font-size: 1rem;
   }
 
   .footer-card {
@@ -838,10 +894,6 @@ body.page-projects {
 }
 
 @media (max-width: 600px) {
-  body {
-    padding: var(--spacing-md);
-  }
-
   body.page-projects {
     padding: 0;
   }
@@ -852,6 +904,14 @@ body.page-projects {
 
   .footer-card {
     padding: var(--spacing-md);
+  }
+
+  body:is(.page-auth, .page-loginhubs) {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  :is(.page-auth, .page-loginhubs) form {
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 
   .content-area {

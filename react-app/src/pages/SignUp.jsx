@@ -17,14 +17,15 @@ function SignUp() {
         <h1>Ibmec Ideas</h1>
       </header>
 
-      <main>
-        <div>
+      <main className="auth-layout">
+        <section className="auth-intro">
           <Link to="/">
-            <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo" />
+            <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo brand-logo--auth" />
           </Link>
-        </div>
 
-        <form onSubmit={handleSubmit}>
+        </section>
+
+        <form className="auth-form" onSubmit={handleSubmit}>
           <h2>Cadastre-se</h2>
           <legend>Informações da Empresa</legend>
 
