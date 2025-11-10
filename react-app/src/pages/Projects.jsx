@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
 import logoBackground from '../assets/Logo_BG.svg';
-import professionalImage from '../assets/professional.png';
+import professionalImage from '../assets/Projetos.png';
+
 
 const projects = Array.from({ length: 6 }, (_, index) => ({
   id: index + 1,
