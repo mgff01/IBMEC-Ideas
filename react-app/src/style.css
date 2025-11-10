@@ -503,7 +503,7 @@ body.page-about {
 }
 
 .feedback-card {
-  background: #ffffff;
+  background: #002555;
   border-radius: 22px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   padding: 40px;
@@ -621,6 +621,10 @@ body.page-projects {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+  overflow-y: auto;
+  box-shadow: 12px 0 30px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-speed), opacity var(--transition-speed), box-shadow var(--transition-speed);
+  z-index: 1000;
 }
 
 .sidebar-title {
@@ -717,6 +721,35 @@ body.page-projects {
   background-color: var(--color-bg-light);
 }
 
+.mobile-nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  background: var(--color-primary-dark);
+  color: var(--color-text-light);
+  font: 600 0.95rem/1 var(--font-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--box-shadow);
+}
+
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 9, 25, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-speed);
+  z-index: 900;
+}
+
+.sidebar-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* --------------------------------------------------------------------------
    Responsive tweaks
    -------------------------------------------------------------------------- */
@@ -743,14 +776,33 @@ body.page-projects {
     gap: var(--spacing-md);
   }
 
+  body.page-projects {
+    min-height: 100vh;
+  }
+
   .sidebar {
-    display: none;
+    width: min(80vw, 320px);
+    transform: translateX(-105%);
+    opacity: 0;
+    pointer-events: none;
+    height: 100%;
+    box-shadow: 16px 0 40px rgba(0, 0, 0, 0.25);
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
   }
 
   .content-area {
     margin: 0;
     width: 100%;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
   }
 }
 
@@ -790,12 +842,35 @@ body.page-projects {
     padding: var(--spacing-md);
   }
 
+  body.page-projects {
+    padding: 0;
+  }
+
   .hero-card {
     padding: 24px 16px;
   }
 
   .footer-card {
     padding: var(--spacing-md);
+  }
+
+  .content-area {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .mobile-nav-toggle {
+    width: auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
 
   .feedback-header-content {

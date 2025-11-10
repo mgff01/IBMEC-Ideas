@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
 import logo from '../assets/Logo.svg';
 import professionalImage from '../assets/professional.png';
+import logoHeader from '../assets/Ideas.svg';
 
 function About() {
   useBodyClass('page-about');
@@ -12,7 +13,7 @@ function About() {
         <div className="feedback-header-content">
           <div>
             <Link to="/">
-              <img src={logo} alt="Logo Ibmec Ideas" style={{ width: 120, height: 120 }} />
+              <img src={logoHeader} alt="Logo Ibmec Ideas" style={{ width: 138.5, height: 91 }} />
             </Link>
           </div>
           <nav className="feedback-nav">
