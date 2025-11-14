@@ -525,6 +525,84 @@ body:is(.page-auth, .page-loginhubs) {
 }
 
 /* --------------------------------------------------------------------------
+   Submit Idea page
+   -------------------------------------------------------------------------- */
+.page-submit .auth-intro h1 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.page-submit .auth-intro p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.page-submit {
+  font-family: 'Space Grotesk', var(--font-main);
+}
+
+.page-submit fieldset legend {
+  position: static;
+  width: auto;
+  height: auto;
+  clip: auto;
+  overflow: visible;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.submit-form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: 0;
+}
+
+.submit-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.submit-form button[type="submit"] {
+  width: 100%;
+}
+
+.submit-intro-card {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  background: rgba(4, 9, 26, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  color: var(--color-text-light);
+}
+
+.submit-intro-card h1 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-light);
+}
+
+.submit-intro-card p {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.submit-intro-card .small {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+.submit-intro-card a {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.auth-footer {
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
    About & feedback shared header
    -------------------------------------------------------------------------- */
 body.page-about {

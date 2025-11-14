@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import { useBodyClass } from '../hooks/useBodyClass.js';
 import logo from '../assets/Logo.svg';
 
 function SubmitIdea() {
-  useBodyClass('');
+  useBodyClass('page-auth page-submit');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,54 +12,75 @@ function SubmitIdea() {
 
   return (
     <>
-      <header>
-        <div>
-          <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo" />
-        </div>
-        <h1>Preencha o formulário abaixo</h1>
-        <p>
-          Antes de enviar, revise os termos de uso: <a href="#termos">Termos de uso</a>
-        </p>
-      </header>
+      <main className="auth-layout">
+        <section className="auth-intro">
+          <Link to="/">
+            <img src={logo} alt="Logo Ibmec Ideas" className="brand-logo brand-logo--auth" />
+          </Link>
+          <div className="submit-intro-card">
+            <h1>Envie sua ideia para o Ibmec Ideas</h1>
+            <p>
+              Compartilhe o contexto, objetivo e prazo da sua iniciativa. Nossa equipe vai analisar e
+              retornar com os próximos passos.
+            </p>
+            <p className="small">
+              Antes de enviar, confira os <a href="#termos">Termos de uso</a>.
+            </p>
+          </div>
+        </section>
 
-      <main>
-        <form onSubmit={handleSubmit}>
+        <form className="auth-form submit-form" onSubmit={handleSubmit}>
+          <h2>Novo projeto</h2>
           <fieldset>
             <legend>Detalhes do Projeto</legend>
-            <div>
+            <div className="form-grid">
               <div>
-                <label htmlFor="nomeProjeto">Nome do Projeto:</label>
-                <input id="nomeProjeto" name="nomeProjeto" required />
+                <label htmlFor="nomeProjeto">Nome do Projeto</label>
+                <input id="nomeProjeto" name="nomeProjeto" placeholder="Ex: Plataforma X" required />
               </div>
               <div>
-                <label htmlFor="descricao">
-                  Descreva seu negócio ou ideia em poucas frases:
-                </label>
-                <input id="descricao" name="descricao" required />
+                <label htmlFor="descricao">Descreva seu negócio ou ideia em poucas frases</label>
+                <input
+                  id="descricao"
+                  name="descricao"
+                  placeholder="Resumo rápido do problema e da solução"
+                  required
+                />
               </div>
               <div>
-                <label htmlFor="objetivo">Qual é o principal objetivo deste projeto?</label>
-                <input id="objetivo" name="objetivo" required />
+                <label htmlFor="objetivo">Objetivo principal</label>
+                <input
+                  id="objetivo"
+                  name="objetivo"
+                  placeholder="Qual impacto você espera gerar?"
+                  required
+                />
               </div>
               <div>
-                <label htmlFor="usuariosPrincipais">
-                  Quem são os usuários principais do seu projeto?
-                </label>
-                <input id="usuariosPrincipais" name="usuariosPrincipais" required />
+                <label htmlFor="usuariosPrincipais">Usuários principais</label>
+                <input
+                  id="usuariosPrincipais"
+                  name="usuariosPrincipais"
+                  placeholder="Quem será beneficiado?"
+                  required
+                />
               </div>
             </div>
 
-            <div>
+            <div className="form-grid">
               <div>
                 <label htmlFor="acaoMaisImportante">
-                  Qual é a ação mais importante que você espera que o usuário realize?
+                  Ação mais importante esperada do usuário
                 </label>
-                <input id="acaoMaisImportante" name="acaoMaisImportante" required />
+                <input
+                  id="acaoMaisImportante"
+                  name="acaoMaisImportante"
+                  placeholder="Ex: completar cadastro, solicitar contato etc."
+                  required
+                />
               </div>
               <div>
-                <label htmlFor="prazo">
-                  Qual é o prazo final ou uma data estimada para o lançamento?
-                </label>
+                <label htmlFor="prazo">Prazo final ou data estimada de lançamento</label>
                 <input id="prazo" name="prazo" type="date" required />
               </div>
             </div>
@@ -68,7 +90,9 @@ function SubmitIdea() {
         </form>
       </main>
 
-      <footer />
+      <footer className="auth-footer">
+        <p>Dúvidas? Fale com o time Ibmec Ideas.</p>
+      </footer>
     </>
   );
 }

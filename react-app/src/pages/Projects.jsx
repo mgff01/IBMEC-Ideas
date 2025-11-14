@@ -43,9 +43,9 @@ function Projects() {
               {project.title}
             </a>
           ))}
-          <a href="#" className="nav-item new-project" onClick={closeSidebar}>
+          <Link to="/enviar-projeto" className="nav-item new-project" onClick={closeSidebar}>
             + Criar projeto
-          </a>
+          </Link>
         </nav>
       </aside>
       <div
