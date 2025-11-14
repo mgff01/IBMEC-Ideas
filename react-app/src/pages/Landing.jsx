@@ -4,6 +4,39 @@ import titleImage from '../assets/Title.svg';
 import instagramIcon from '../assets/instagram.svg';
 import xIcon from '../assets/x.svg';
 import linkedinIcon from '../assets/linkedin.svg';
+import projectOneImage from '../assets/Project_1.png';
+import projectTwoImage from '../assets/Project_2.png';
+import projectThreeImage from '../assets/Project_3.jpg';
+import projectOneLogo from '../assets/Logo Project_1.svg';
+import projectTwoLogo from '../assets/Logo Project_2.png';
+import projectThreeLogo from '../assets/Logo Project_3.png';
+
+const showcaseProjects = [
+  {
+    title: 'Hotel Continental',
+    description:
+      'Website do Hotel Continental',
+    status: 'Finalizado',
+    image: projectOneImage,
+    titleImage: projectOneLogo,
+  },
+  {
+    title: 'Agile Team Builder',
+    description:
+      'Sistema desenvolvido para gerar, estruturar e otimizar equipes ageis conforme os requisitos do projeto.',
+    status: 'Finalizado',
+    image: projectTwoImage,
+    titleImage: projectTwoLogo,
+  },
+  {
+    title: 'Kroma',
+    description:
+      'Dispositivo detector de cores capaz de executar comandos no computador de acordo com a cor identificada durante a leitura.',
+    status: 'Finalizado.',
+    image: projectThreeImage,
+    titleImage: projectThreeLogo,
+  },
+];
 
 function Landing() {
   useBodyClass('page-index');
@@ -37,6 +70,43 @@ function Landing() {
           </div>
         </section>
       </main>
+
+      <section className="projects-gallery">
+        <div className="projects-gallery__header">
+          <h2>Nossos projetos</h2>
+          <p>
+            Estamos construindo iniciativas para aproximar empresas, alunos e mentores. Confira o que
+            ja saiu do papel e o que esta chegando nas proximas semanas.
+          </p>
+        </div>
+
+        <div className="projects-gallery__grid">
+          {showcaseProjects.map((project) => (
+            <article key={project.title} className="project-card">
+              <div className="project-card__media">
+                <img
+                  src={project.image}
+                  alt={`Projeto ${project.title}`}
+                  className="project-card__img"
+                />
+                <div className="project-card__overlay">
+                  {project.titleImage ? (
+                    <img
+                      src={project.titleImage}
+                      alt={`Logo do projeto ${project.title}`}
+                      className="project-card__title-image"
+                    />
+                  ) : (
+                    <h3>{project.title}</h3>
+                  )}
+                  <p>{project.description}</p>
+                  <p className="project-card__status">{project.status}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <footer className="footer-card">
         <div className="contact-list">
