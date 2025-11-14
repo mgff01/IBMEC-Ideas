@@ -21,7 +21,7 @@ function About() {
               Dê seu feedback
             </Link>
             <Link to="/" className="feedback-nav-btn">
-              Fale Conosco
+              Home
             </Link>
           </nav>
         </div>
